@@ -1,0 +1,137 @@
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+$--font-weight--regular: 400;
+$--font-weight--emibold: 500;
+$--font-weight--medium: 600;
+
+$--font-size-small: 12px;
+$--font-size-base: 14px;
+$--font-size-medium: 16px;
+$--font-size-large: 18px;
+$--font-size-xl: 22px;
+$--font-size-2xl: 26px;
+
+$--font-size-game-medium: 26px;
+$--font-size-game-large: 32px;
+
+$--font-family-regular: 'Nunito-Regular';
+$--font-family-italic: 'Nunito-Italic';
+$--font-family-medium: 'Nunito-Bold';
+$--font-game: 'Righteous-Regular';
+
+$--text-shadow-small: 0 1px 1px rgba(0, 0, 0, 0.2);
+$--text-shadow-medium: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+@mixin game-text-base {
+  font: {
+    family: $--font-game;
+    weight: 900;
+    size: $--font-size-large;
+  }
+  letter-spacing: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: $--text-shadow-small;
+}
+@mixin game-text-medium {
+  font: {
+    family: $--font-game;
+    size: $--font-size-game-medium;
+  }
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: $--text-shadow-medium;
+}
+@mixin game-text-large{
+  @include game-text-medium;
+  font-size: $--font-size-game-large;
+}
+
+@mixin text-small {
+  font: {
+    family: $--font-family-regular;
+    weight: normal;
+    size: $--font-size-small;
+  }
+  color: $--color-text-secondary;
+}
+@mixin text-base {
+  font: {
+    family: $--font-family-regular;
+    weight: normal;
+    size: $--font-size-base;
+  }
+  line-height: 1.5;
+}
+
+@mixin text-medium {
+  font: {
+    weight: normal;
+    family: $--font-family-regular;
+    size: $--font-size-medium;
+  }
+}
+@mixin text-large {
+  font: {
+    family: $--font-family-medium;
+    weight: normal;
+    size: $--font-size-large;
+  }
+}
+
+@mixin text-xl {
+  font: {
+    family: $--font-family-medium;
+    weight: normal;
+    size: $--font-size-xl;
+  }
+}
+
+@mixin text-2xl {
+  font: {
+    family: $--font-family-medium;
+    weight: normal;
+    size: $--font-size-2xl;
+  }
+}
+
+@mixin text-italic {
+  font: {
+    family: $--font-family-italic;
+    weight: normal;
+    size: $--font-size-base;
+  }
+}
+
+@mixin text-title {
+  font: {
+    family: $--font-family-medium;
+    weight: normal;
+    size: $--font-size-base;
+  }
+  color: $--color-title;
+  line-height: 1.5;
+}
+
+@mixin text-ellipsis{
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-multi-ellipsis($line, $line-height: 1.5, $font-size: 16px){
+  overflow: hidden;
+  max-height: $line * $line-height * $font-size;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+@mixin user-no-select() {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}

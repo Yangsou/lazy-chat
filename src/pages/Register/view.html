@@ -1,0 +1,65 @@
+<div class="register">
+    
+  <el-form
+    :model="form"
+    ref="loginForm"
+    class="register__form"
+    size="small"
+    autocomplete="off">
+
+    <h2 class="register__form__title">{{ $t('title.login') }}</h2>
+    <p class="register__form__text">{{ $t('desc.register') }}</p>
+
+    <el-form-item
+      :rules="[rules.required]"
+      v-model="form.name"
+      :label="$t('field.name')"
+      prop="name">
+      <el-input
+        type="text"
+        v-model="form.name"
+        :placeholder="$t('fill.name')"
+      >
+      </el-input>
+    </el-form-item>
+
+    <el-form-item
+      :rules="[rules.required,rules.email]"
+      v-model="form.email"
+      :label="$t('field.email')"
+      prop="email">
+      <el-input
+        type="email"
+        v-model="form.email"
+        :placeholder="$t('fill.email')">
+      </el-input>
+    </el-form-item>
+
+    <el-form-item
+      :rules="[rules.required]"
+      v-model="form.password"
+      :label="$t('field.password')"
+      prop="password">
+      <el-input
+        type="password"
+        v-model="form.password"
+        :placeholder="$t('fill.password')"
+        @keyup.enter.native="submit"
+      >
+      </el-input>
+    </el-form-item>
+    
+    <div class="el-form-item__error">{{errorMessage}}</div>
+
+    <el-button
+      :disabled="valid"
+      :loading="loading"
+      type="primary"
+      size="small"
+      @click="submit">{{ $t('button.register') }}</el-button>
+
+  </el-form>
+
+  <!-- <footer-guest /> -->
+
+</div>

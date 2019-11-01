@@ -1,0 +1,33 @@
+.container{
+  max-width: $--main-width;
+  margin: 0 auto;
+  &.el-main{
+    padding: 0 0 40px;
+    overflow: initial;
+    overflow-x: auto;
+  }
+  &--fluid {
+    width: 100%;
+    &.el-main{
+      padding: 0;
+      overflow: initial;
+      overflow-x: auto;
+      min-height: 100vh;
+      background-color: $--color-silver-600;
+      &.header-hidden {
+        padding-top: 0;
+      }
+    }
+  }
+}
+.height-fluid {
+  height: 100%;
+}
+.scrollbar-main {
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
+}
+.main {
+  margin-left: $--nav-width;
+}

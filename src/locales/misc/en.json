@@ -1,0 +1,42 @@
+{
+  "dateTimeFormats": {
+    "short": {
+      "year": "numeric", 
+      "month": "2-digit", 
+      "day": "numeric",
+      "hour": "numeric",
+      "minute": "numeric"
+    },
+    "long": {
+      "year": "numeric", 
+      "month": "short", 
+      "day": "numeric",
+      "weekday": "short",
+      "hour": "numeric", 
+      "minute": "numeric"
+    },
+    "shortDate": {
+      "year": "numeric", 
+      "month": "short", 
+      "day": "numeric"
+    },
+    "longDate": {
+      "year": "numeric", 
+      "month": "2-digit", 
+      "day": "2-digit",
+      "weekday": "narrow"
+    },
+    "time": {
+      "hour": "2-digit", 
+      "minute": "2-digit"
+    }
+  },
+  "numberFormats": {
+    "currency": {
+      "style": "currency", 
+      "currency": "USD", 
+      "currencyDisplay": "symbol"
+    }
+  }
+  
+}

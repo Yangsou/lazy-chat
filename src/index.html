@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- <link href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" rel="stylesheet"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Admin Portal</title>
+  <link rel="manifest" href="/manifest.json" />
+</head>
+
+<body>
+  <div id="app"  class="height-fluid">
+    <splash-screen v-if="isLoading"></splash-screen>
+    <component v-if="!isLoading" :is="layout"></component>
+    <top-alert v-if="topAlertOpened" :alert="topAlertOpened"></top-alert>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+$--bg-color: #F2F2F2;
+
+.register {
+    background-color: $--bg-color;
+    // position: absolute;
+    width: 100%;
+    min-height: calc(100vh - 49px);
+    padding-bottom: 114px;
+    padding-top: 100px;
+    // left: 0;
+    &__form {
+        width: 367px;
+        background-color: $--color-light;
+        margin: 0 auto 30px;
+        padding: 30px;
+        border-radius: 4px;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+        &__title {
+            @include text-xl;
+            color: $--color-text-primary;
+            text-transform: capitalize;
+            line-height: 1.45;
+        }
+        &__text {
+            margin-top: 4px;
+            margin-bottom: 26px;
+            @include text-base;
+            color: $--color-text-secondary;
+            line-height: 1.5;
+        }
+        &__note {
+            margin-top: 6px;
+            height: 20px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            @include text-small;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateY(100%);
+            .icon {
+                margin-right: 6px;
+            }
+            &--error {
+                color: $--color-dangerous;
+            }
+            &--retype {
+                display: none;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+        &__item--retype {
+            .el-form-item__content {
+                position: relative;
+                padding-bottom: 26px;
+            }
+        }
+        .button--primary {
+            &.el-button--primary {
+                text-transform: uppercase;
+            }
+        }
+
+        .el-form-item__label {
+            @include text-base;
+            color: $--color-text-secondary;
+            line-height: 1.5;
+            text-transform: capitalize;
+        }
+        .el-input--small .el-input__inner {
+            height: 36px;
+            line-height: 36px;
+            padding-left: 12px;
+        }
+        .el-form-item--small.el-form-item {
+            margin-bottom: 24px;
+        }
+        .el-date-editor.el-input, .el-date-editor.el-input__inner {
+            width: 100%;
+            .el-input__prefix {
+                right: 10px;
+                left: initial;
+                .icon {
+                    margin-top: 10px;
+                }
+            }
+        }
+        .el-select.el-select--small {
+            width: 100%;
+        }
+        .el-form-item.is-error {
+            .register__form__note {
+                display: flex;
+                color: $--color-dangerous;
+            }
+        }
+    }
+
+    &__desc {
+        @include text-base;
+        text-align: center;
+        color: $--color-text-secondary;
+        line-height: 1.5;
+        // margin-bottom: 114px;
+        &--first-line {
+            margin-bottom: 8px;
+        }
+        a {
+            @include text-large;
+            font-size: $--font-size-base;
+            text-decoration: none;
+            color: $--color-link;
+        }
+    }
+}
+
+.button {
+    &--primary {
+        &.el-button--primary {
+            background-image: linear-gradient(to bottom, #39b54a, #34aa44);
+            @include text-base;
+        }
+    }
+    &--game {
+        &.el-button {
+            background-image: linear-gradient(to bottom, #F7981C, #F76B1C);
+            @include game-text-medium;
+            font-size: 26px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            height: 56px;
+            line-height: 56px;
+            padding: 0;
+            &:hover,
+            &:focus {
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                color: #ffffff;
+            }
+        }
+    }
+}

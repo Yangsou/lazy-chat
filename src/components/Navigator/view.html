@@ -1,0 +1,32 @@
+<el-scrollbar class="navigator" :noresize="true">
+  <div class="navigator__contents">
+    <avatar class="navigator__logo" :user="authUser" />
+
+    <el-menu
+      default-active="2"
+      class="el-menu-vertical-demo"
+      :unique-opened="true"
+      :router="true"
+      >
+      <template v-for="(navigation, nIndex) in navigations">
+        <span v-if="nIndex > 0" class="divider"></span>
+        <p class="navigator__menu__group-name">{{ navigation.groupName }}</p>
+        <template v-for="(item, index) in navigation.children">
+          <el-submenu v-if="item.children && isShowNavigator(item.path)" :index="index.toString()">
+            <template slot="title">
+              <span>{{ item.label }}</span>
+            </template>
+            <el-menu-item v-for="(sub, _index) in item.children" :key="_index" :index="`${index}-${_index}`" :route="{path: sub.path}">{{ sub.label }}</el-menu-item>
+          </el-submenu>
+
+          <el-menu-item v-else-if="isShowNavigator(item.path)" :index="index.toString()" :route="{path: item.path}">
+            {{ item.label }}
+          </el-menu-item>
+
+        </template>
+
+      </template>
+    </el-menu>
+  </div>
+
+</el-scrollbar>

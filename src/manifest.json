@@ -1,0 +1,11 @@
+{
+  "name": "web",
+  "description": "web Push Notifications.",
+  "manifest_version": 3,
+  "version": "1.0.1",
+  "app": {
+    "background": {
+    }
+  },
+  "permissions": ["gcm", "storage", "notifications", "identity", "browser"]
+}

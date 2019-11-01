@@ -1,0 +1,6 @@
+<div class="avatar">
+  <img :src="user.avatar" v-if="user && user.avatar" class="avatar__img" />
+  <img src="/assets/img/avatar-placeholder@svg.svg" v-else class="avatar__img" />
+
+  <p v-if="showFullname" class="avatar__text">{{ fullNameUser(user) }}</p>
+</div>

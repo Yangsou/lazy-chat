@@ -1,0 +1,34 @@
+{
+  "field_required": "Field is required",
+  "field_invalid": "%{field} is invalid",
+  "text_min_length": "Require at least %{min} characters",
+  "At_least_8_characters": "At least 8 characters",
+  "website_invalid": "Invalid Website",
+  "code_invalid": "Accept alphabet, digit and underline only",
+  "email_invalid": "Invalid e-mail",
+  "value_not_compare": "Value not match",
+  "deleted": "deleted",
+  "empty_text": "No Data",
+  "invalid_number": "Invalid number",
+
+  "field": {
+    "password": "Password",
+    "email": "Email",
+    "name": "Name"
+  },
+  "fill": {
+    "email": "Fill in your email",
+    "password": "Fill in password",
+    "name": "Fill in your name"
+  },
+  "title": {
+    "login": "Hi guy,"
+  },
+  "desc": {
+    "register": "One step to connect the world!"
+  },
+  "button": {
+    "login": "Login",
+    "register": "Register"
+  }
+}

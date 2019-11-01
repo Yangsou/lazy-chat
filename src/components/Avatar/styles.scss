@@ -1,0 +1,16 @@
+.avatar {
+  &__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    &--default {
+      background-color: $--color-silver-500;
+    }
+  }
+  &__text {
+    @include text-base;
+    margin-top: 8px;
+    text-align: center;
+  }
+}

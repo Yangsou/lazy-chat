@@ -1,0 +1,55 @@
+<div class="register">
+    
+  <el-form
+    :model="form"
+    ref="loginForm"
+    class="register__form"
+    autocomplete="off">
+
+    <h2 class="register__form__title">{{ $t('title.login') }}</h2>
+    <p class="register__form__text">We’re happy to have you here again!</p>
+
+    <el-form-item
+      :rules="[rules.required,rules.email]"
+      v-model="form.email"
+      :label="$t('field.email')"
+      prop="email">
+      <el-input
+        type="email"
+        v-model="form.email"
+        @keyup.enter.native="submit"
+        :placeholder="$t('fill.email')"
+        size="small"
+      >
+      </el-input>
+    </el-form-item>
+
+    <el-form-item
+      :rules="[rules.required]"
+      v-model="form.password"
+      :label="$t('field.password')"
+      prop="password">
+      <el-input
+        type="password"
+        v-model="form.password"
+        size="small"
+        :placeholder="$t('fill.password')"
+        @keyup.enter.native="submit"
+      >
+      </el-input>
+    </el-form-item>
+    
+    <div class="el-form-item__error">{{errorMessage}}</div>
+
+    <el-button
+      :disabled="valid"
+      :loading="loading"
+      type="primary"
+      size="small"
+      @click="submit">{{ $t('button.login') }}</el-button>
+
+  </el-form>
+
+  <!-- <footer-guest /> -->
+
+</div>

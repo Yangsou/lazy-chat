@@ -1,0 +1,46 @@
+$--list-icon: (
+  'delete',
+  'edit',
+  'disabled',
+  'view',
+  'plus-circle',
+  'cross-circle',
+  'add-more-inactive',
+  'add-more-active',
+  'minus',
+  'search',
+  'cross-error-big',
+  'option-bar-settings',
+  'image-picture',
+  'images-967',
+  'dollar-sign',
+  'cross-cancel',
+  'templating',
+  'file',
+  'icons-game-point'
+);
+
+$--icon-width: 32px;
+$--icon-width--large: 48px;
+
+// define variable
+$--color-primary: #2A8CF1;
+$--color-sub-primary: #aeafe8;
+$--color-text-primary: #484F5A;
+$--color-text-secondary: #8E9298;
+// $--color-text-label: #3e3f42;
+$--color-light: #fff;
+
+$--color-blue-nature: #2ea2f8;
+$--color-link: $--color-blue-nature;
+$--color-red-nature-50: #dd6589;
+$--color-red-nature-100: #FA474F;
+$--color-silver-500: #B3B2C0;
+$--color-silver-600: #f1f4f8;
+$--color-title: #b0b0b1;
+$--color-dangerous: $--color-red-nature-100;
+
+$--color-dark: #252529;
+
+$--main-width: 1110px;
+$--header-height: 70px;

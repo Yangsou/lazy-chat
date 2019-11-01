@@ -1,0 +1,70 @@
+<div class="list-data"
+  v-bind:class="`list-data--${size}`">
+  <el-table
+    :data="data"
+    v-loading="loading"
+    :empty-text="$t('empty_text')"
+    style="width: 100%"
+    @row-click="handleRowClick"
+    header-cell-class-name="list-data__header__cell">
+    <el-table-column align="center" type="index" width="48"></el-table-column>
+    <el-table-column
+      v-for="item in columns"
+      :key="item.prop"
+      :prop="item.prop"
+      :width="item.width"
+      :align="item.align"
+      :label="item.label">
+      <template slot-scope="scope">
+        <div class="list-data__body__cell">
+          <slot v-if="checkSlot(item.prop)" :name="item.prop" :scope="scope"></slot>
+          <template v-else>
+            <avatar
+              v-if="item.avatar"
+              :user="item.avatar.formatter ? item.avatar.formatter(scope.row) : scope.row"
+              className="list-data__avatar"
+              :showFullname="false"
+              size="mini">
+              <!-- :id="item.avatar.id ? item.avatar.id(scope.row): scope.row.id" -->
+            </avatar>
+            <!-- <div class="list-data__avatar"></div> -->
+            <p :class="`text ${item.labelStyle ? item.labelStyle(scope.row) : ''}`">{{ item.formatter ? item.formatter(scope.row) : text(scope.row,scope) }}</p>
+          </template>
+        </div>
+      </template>
+    </el-table-column>
+    
+    <el-table-column :fixed="fixed" :align="align" prop="id" :width="eyeAction ? 50 : 122" class-name="actions" v-if="showAction">
+      <template slot-scope="scope">
+
+        <el-dropdown @command="clickDropdown" trigger="click">
+          <el-button size="medium" v-if="!eyeAction">
+              Action <i class="el-icon-d-caret"></i>
+          </el-button>
+          <el-button class="btn-icon" size="medium" type="text" v-else><i class="el-icon-more"></i></el-button>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item
+              v-for="(action, index) in convertActions"
+              :command="`${action}|${scope.row.id}`"
+              :disabled="action === 'delete' && noHandleDisabled"
+              v-bind:class="{'list-data__action__delete': action === 'delete' || action === 'close'}"
+              class="list-data__action__icon"
+              :key="index"><span :class="`icon icon__${action}`"></span> {{ formatterActionLabel(action, scope.row) }}</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+
+      </template>
+    </el-table-column>
+  </el-table>
+  <el-pagination
+    v-if="data && pagination && pagination.totalPages > 1"
+    layout="prev, pager, next" 
+    @current-change="currentChange"
+    :page-size="pagination.size"
+    nextText="Next →"
+    prevText="← Previous"
+    class="pagination"
+    :current-page.sync="pagination.page"
+    :total="pagination.total">
+  </el-pagination>
+</div>
